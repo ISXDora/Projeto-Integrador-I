@@ -1,0 +1,22 @@
+<%= form_with(model: ribbon) do |form| %>
+  <% if ribbon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ribbon.errors.count, "error") %> prohibited this ribbon from being saved:</h2>
+
+      <ul>
+        <% ribbon.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :film_id %>
+    <%=form.collection_select(:film_id, Film.all, :id, :title, prompt: true) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
