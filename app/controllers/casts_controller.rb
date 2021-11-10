@@ -64,6 +64,6 @@ class CastsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def cast_params
-      params.require(:cast).permit(:film_id, :actor_id)
+      params.require(:cast).permit(:film_id, :actor_id =>[])
     end
 end
