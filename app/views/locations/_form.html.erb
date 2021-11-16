@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :film_id %>
-    <%= form.collection_select(:film_id, Film.all, :id, :title, prompt: true) %>
+    <%= form.table :film_id%>
   </div>
 
   <div class="actions">
