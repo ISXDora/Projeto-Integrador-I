@@ -22,11 +22,30 @@
   </div>
 
   <div class="field">
-    <%= form.label :film_id %>
-    <%= form.table :film_id%>
+    <%= form.label :Filmes %>
+    <style>
+      table, tr td{
+        border: 1px solid  #ccc;
+      }
+
+    </style>
+    <table>
+        <td>Título</td>
+        <td>Categoria</td>
+        <td>Situação</td>
+        <td>Adicionar</td>
+      <% Film.all.each do |film| %>
+        <tr>
+          <td><%= film.title %></td>
+          <td><%= film.category %></td>
+          <td><%= film.available %></td>
+          <td><%= film.id %></td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit :Salvar %>
   </div>
 <% end %>
