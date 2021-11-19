@@ -1,5 +1,5 @@
 class LocationsController < ApplicationController
-  before_action :set_location, only: %i[ show edit update destroy ]
+  before_action :set_location, only: %i[ show edit update add destroy ]
 
   # GET /locations or /locations.json
   def index
@@ -13,6 +13,7 @@ class LocationsController < ApplicationController
   # GET /locations/new
   def new
     @location = Location.new
+    @films = Film.all
   end
 
   # GET /locations/1/edit

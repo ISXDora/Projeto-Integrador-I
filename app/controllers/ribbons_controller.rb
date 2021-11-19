@@ -13,6 +13,7 @@ class RibbonsController < ApplicationController
   # GET /ribbons/new
   def new
     @ribbon = Ribbon.new
+
   end
 
   # GET /ribbons/1/edit
@@ -25,7 +26,7 @@ class RibbonsController < ApplicationController
 
     respond_to do |format|
       if @ribbon.save
-        format.html { redirect_to @ribbon, notice: "Ribbon was successfully created." }
+        format.html { redirect_to @ribbon, notice: "Fita cadastrada com sucesso." }
         format.json { render :show, status: :created, location: @ribbon }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +39,7 @@ class RibbonsController < ApplicationController
   def update
     respond_to do |format|
       if @ribbon.update(ribbon_params)
-        format.html { redirect_to @ribbon, notice: "Ribbon was successfully updated." }
+        format.html { redirect_to @ribbon, notice: "Fita atualizada com sucesso." }
         format.json { render :show, status: :ok, location: @ribbon }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +52,7 @@ class RibbonsController < ApplicationController
   def destroy
     @ribbon.destroy
     respond_to do |format|
-      format.html { redirect_to ribbons_url, notice: "Ribbon was successfully destroyed." }
+      format.html { redirect_to ribbons_url, notice: "Fita deletada com sucesso." }
       format.json { head :no_content }
     end
   end

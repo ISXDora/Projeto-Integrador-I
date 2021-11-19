@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_10_162546) do
+ActiveRecord::Schema.define(version: 2021_11_18_200855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,12 @@ ActiveRecord::Schema.define(version: 2021_11_10_162546) do
     t.index ["film_id"], name: "index_casts_on_film_id"
   end
 
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.string "surname"
@@ -47,14 +53,21 @@ ActiveRecord::Schema.define(version: 2021_11_10_162546) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "id_films", force: :cascade do |t|
+    t.bigint "film_id", null: false
+    t.bigint "location_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["film_id"], name: "index_id_films_on_film_id"
+    t.index ["location_id"], name: "index_id_films_on_location_id"
+  end
+
   create_table "locations", force: :cascade do |t|
     t.date "devolved_date"
     t.bigint "client_id", null: false
-    t.bigint "film_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["client_id"], name: "index_locations_on_client_id"
-    t.index ["film_id"], name: "index_locations_on_film_id"
   end
 
   create_table "ribbons", force: :cascade do |t|
@@ -66,7 +79,8 @@ ActiveRecord::Schema.define(version: 2021_11_10_162546) do
 
   add_foreign_key "casts", "actors"
   add_foreign_key "casts", "films"
+  add_foreign_key "id_films", "films"
+  add_foreign_key "id_films", "locations"
   add_foreign_key "locations", "clients"
-  add_foreign_key "locations", "films"
   add_foreign_key "ribbons", "films"
 end

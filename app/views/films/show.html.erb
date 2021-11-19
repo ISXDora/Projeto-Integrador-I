@@ -11,8 +11,12 @@
 </p>
 
 <p>
-  <strong>Disponível:</strong>
-  <%= @film.available %>
+  <strong>Situação:</strong>
+  <%= if @film.available == true
+          "Disponível"
+      else "Indisponível"
+      end
+  %>
 </p>
 
 <p>
@@ -20,9 +24,13 @@
   <%= @film.actors.pluck(:name) %>
 </p>
 
+
 <p>
-  <strong>Fita:</strong>
-  <%= @ribbon = Ribbon.find(params[:id]).id %>
+  <strong>Fita(s):</strong>
+  <% @film.ribbons.each do |ribbon| %>
+    <span><%= ribbon.id %></span>
+  <% end %>
+
 </p>
 
 <%= link_to 'Editar', edit_film_path(@film) %> |

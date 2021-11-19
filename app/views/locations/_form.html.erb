@@ -11,8 +11,10 @@
     </div>
   <% end %>
 
+ 
+
   <div class="field">
-    <%= form.label :devolved_date %>
+    <%= form.label :Data_de_devolução %>
     <%= form.date_select :devolved_date %>
   </div>
 
@@ -20,6 +22,7 @@
     <%= form.label :client_id %>
     <%= form.collection_select(:client_id, Client.all, :id, :name, prompt: true) %>
   </div>
+ 
 
   <div class="field">
     <%= form.label :Filmes %>
@@ -30,18 +33,29 @@
 
     </style>
     <table>
+        <thead>
         <td>Título</td>
         <td>Categoria</td>
         <td>Situação</td>
         <td>Adicionar</td>
-      <% Film.all.each do |film| %>
+        </thead>
+      <%= @location.idFilm.each do |film| %>
+        <tbody>
         <tr>
           <td><%= film.title %></td>
           <td><%= film.category %></td>
-          <td><%= film.available %></td>
-          <td><%= film.id %></td>
+          <td><%= 
+                if film.available == true
+                    "Disponível"
+                else "Indisponível"
+                end
+              %>
+          </td>
+          <td><a href="/films/<%= film.id %>">Add</a></td>
         </tr>
+        </tbody>
       <% end %>
+
     </table>
   </div>
 

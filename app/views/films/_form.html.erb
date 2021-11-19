@@ -20,10 +20,13 @@
     <%= form.label :Categoria %>
 
     <%= label_tag 'ANI', 'Animação'%>
-    <%= check_box_tag 'film[category][]', 'Animação', checked('Animação'), id: 'ANI' %>
+    <%= check_box_tag 'film[category][]', 'Animação', checked('Animação'), id: 'ANI'%>
 
     <%= label_tag 'CMD', 'Comédia'%>
     <%= check_box_tag 'film[category][]', 'Comédia', checked('Comédia'), id: 'CMD'%>
+
+    <%= label_tag 'ROM', 'Romance'%>
+    <%= check_box_tag 'film[category][]', 'Romance', checked('Romance'), id: 'ROM'%>
 
     <%= label_tag 'CMR', 'Comédia Romântica'%>
     <%= check_box_tag 'film[category][]', 'Comédia Romântica', checked('Comédia Romântica'), id: 'CMR'%>
