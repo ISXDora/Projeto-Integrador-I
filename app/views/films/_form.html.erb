@@ -18,54 +18,7 @@
 
   <div class="field">
     <%= form.label :Categoria %>
-
-    <%= label_tag 'ANI', 'Animação'%>
-    <%= check_box_tag 'film[category][]', 'Animação', checked('Animação'), id: 'ANI'%>
-
-    <%= label_tag 'CMD', 'Comédia'%>
-    <%= check_box_tag 'film[category][]', 'Comédia', checked('Comédia'), id: 'CMD'%>
-
-    <%= label_tag 'ROM', 'Romance'%>
-    <%= check_box_tag 'film[category][]', 'Romance', checked('Romance'), id: 'ROM'%>
-
-    <%= label_tag 'CMR', 'Comédia Romântica'%>
-    <%= check_box_tag 'film[category][]', 'Comédia Romântica', checked('Comédia Romântica'), id: 'CMR'%>
-
-    <%= label_tag 'CMD', 'Comédia Dramática'%>
-    <%= check_box_tag 'film[category][]', 'Comédia Dramática', checked('Comédia Dramática'), id: 'CMD'%>
-
-    <%= label_tag 'DOC', 'Documentário'%>
-    <%= check_box_tag 'film[category][]', 'Documentário', checked('Documentário'), id: 'DOC'%>
-
-    <%= label_tag 'DRM', 'Drama'%>
-    <%= check_box_tag 'film[category][]', 'Drama', checked('Drama'), id: 'DRM'%>
-
-    <%= label_tag 'FRT', 'Faroeste'%>
-    <%= check_box_tag 'film[category][]', 'Faroeste', checked('Faroeste'), id: 'FRT'%>
-
-    <%= label_tag 'FCC', 'Ficção Científica'%>
-    <%= check_box_tag 'film[category][]', 'Ficção Científica', checked('Ficção Científica'), id: 'FCC'%>
-
-    <%= label_tag 'MUS', 'Musical'%>
-    <%= check_box_tag 'film[category][]', 'Musical', checked('Musical'), id: 'MUS'%>
-
-    <%= label_tag 'SUP', 'Suspense'%>
-    <%= check_box_tag 'film[category][]', 'Suspense', checked('Suspense'), id: 'SUP'%>
-
-    <%= label_tag 'TER', 'Terror/Horror'%>
-    <%= check_box_tag 'film[category][]', 'Terror/Horror', checked('Terror/Horror'), id: 'TER'%>
-
-    <%= label_tag 'FAN', 'Fantasia'%>
-    <%= check_box_tag 'film[category][]', 'Fantasia', checked('Fantasia'), id: 'FAN'%>
-
-    <%= label_tag 'AVE', 'Aventura'%>
-    <%= check_box_tag 'film[category][]', 'Aventura', checked('Aventura'), id: 'AVE'%>
-
-  </div>
-
-  <div class="field">
-    <%= form.label :Disponível %>
-    <%= form.check_box :available %>
+    <%= form.collection_select(:category_id, Category.all, :id, :name, prompt: true) %>
   </div>
 
   <div class="actions">

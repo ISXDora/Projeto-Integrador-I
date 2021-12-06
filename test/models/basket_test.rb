@@ -1,6 +1,6 @@
 require "test_helper"
 
-class IdFilmTest < ActiveSupport::TestCase
+class BasketTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

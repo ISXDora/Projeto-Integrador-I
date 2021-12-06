@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root 'locations#index'
 
-  get "/locations/new/add", to: "locations#add"
+ resources :categories 
+  resources :baskets
   resources :locations
-  resources :clients
+   resources :clients
   resources :casts
   resources :actors
   resources :ribbons

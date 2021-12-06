@@ -1,27 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>ID Filme:</strong>
+  <%= @film.id %>
+</p>
+
+<p>
   <strong>Título:</strong>
   <%= @film.title %>
 </p>
 
 <p>
   <strong>Categoria:</strong>
-  <%= @film.category %>
-</p>
-
-<p>
-  <strong>Situação:</strong>
-  <%= if @film.available == true
-          "Disponível"
-      else "Indisponível"
-      end
-  %>
+  <%= @film.category.name %>
 </p>
 
 <p>
   <strong>Elenco:</strong>
-  <%= @film.actors.pluck(:name) %>
+  <%= @film.actors.pluck(:name)%>
+  <%= link_to 'Adicionar Novo Ator', new_actor_path %>
+  <%= link_to 'Cadastrar Elenco', casts_path %>
 </p>
 
 
@@ -30,7 +28,7 @@
   <% @film.ribbons.each do |ribbon| %>
     <span><%= ribbon.id %></span>
   <% end %>
-
+  <%= link_to 'Cadastrar Fita', new_ribbon_path %>
 </p>
 
 <%= link_to 'Editar', edit_film_path(@film) %> |

@@ -2,13 +2,19 @@
 
 <p>
   <strong>Film:</strong>
-  <%= @cast.film_id %>
+  <%= @cast.film.title %>
 </p>
 
 <p>
   <strong>Actor:</strong>
-  <%= @cast.actor_id %>
+  <%= @cast.actor.name %>
 </p>
 
 <%= link_to 'Edit', edit_cast_path(@cast) %> |
 <%= link_to 'Back', casts_path %>
+<br>
+<%= link_to 'Cadastrar outro Ator', new_actor_path %>
+<br>
+<%= link_to 'Voltar para Filme', film_path(@cast.film) %>
+<br>
+<%= link_to 'Adicionar Ator ao Elenco', new_cast_path %>

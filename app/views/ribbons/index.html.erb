@@ -15,7 +15,7 @@
     <% @ribbons.each do |ribbon| %>
       <tr>
         <td><%= ribbon.id %></td>
-        <td><%= ribbon.film_id %></td>
+        <td><%= ribbon.film.title %></td>
         <td><%= link_to 'Ver', ribbon %></td>
         <td><%= link_to 'Editar', edit_ribbon_path(ribbon) %></td>
         <td><%= link_to 'Deletar', ribbon, method: :delete, data: { confirm: 'Are you sure?' } %></td>

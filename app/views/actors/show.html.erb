@@ -4,6 +4,9 @@
   <strong>Nome:</strong>
   <%= @actor.name %>
 </p>
+<br>
+<%= link_to 'Adicionar Ator à Elenco', new_cast_path(@actor) %>
+<br>
 
 <%= link_to 'Editar', edit_actor_path(@actor) %> |
 <%= link_to 'Voltar', actors_path %>

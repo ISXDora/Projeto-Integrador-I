@@ -65,6 +65,6 @@ class RibbonsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ribbon_params
-      params.require(:ribbon).permit(:film_id, :id)
+      params.require(:ribbon).permit(:film_id)
     end
 end

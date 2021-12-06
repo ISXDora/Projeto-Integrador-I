@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Filme:</strong>
+  <%= @basket.ribbon.film.title%>
+</p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= @basket.location.client.name %>
+</p>
+
+<p>
+  <strong>Nº ID Locação:</strong>
+  <%= @basket.location.id  %>
+</p>
+<br>
+<%= link_to 'Adicionar filme a locação', new_basket_path %>
+
+<br>
+<br>
+<%= link_to 'Ver Locação', location_path(@basket.location.id) %>
+<br>
+
+<%= link_to 'Edit', edit_basket_path(@basket) %> 
+<%= link_to 'Back', baskets_path %>

@@ -8,12 +8,12 @@ class LocationsController < ApplicationController
 
   # GET /locations/1 or /locations/1.json
   def show
+    @baskets = Basket.all
   end
 
   # GET /locations/new
   def new
     @location = Location.new
-    @films = Film.all
   end
 
   # GET /locations/1/edit
@@ -26,7 +26,7 @@ class LocationsController < ApplicationController
 
     respond_to do |format|
       if @location.save
-        format.html { redirect_to @location, notice: "Location was successfully created." }
+        format.html { redirect_to @location, notice: "Locação iniciada!Escolha o(s) filme(s) para continuar..." }
         format.json { render :show, status: :created, location: @location }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -65,6 +65,6 @@ class LocationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def location_params
-      params.require(:location).permit(:devolved_date, :client_id, :film_id)
+      params.require(:location).permit(:devolved_date, :client_id)
     end
 end

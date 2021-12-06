@@ -23,42 +23,6 @@
     <%= form.collection_select(:client_id, Client.all, :id, :name, prompt: true) %>
   </div>
  
-
-  <div class="field">
-    <%= form.label :Filmes %>
-    <style>
-      table, tr td{
-        border: 1px solid  #ccc;
-      }
-
-    </style>
-    <table>
-        <thead>
-        <td>Título</td>
-        <td>Categoria</td>
-        <td>Situação</td>
-        <td>Adicionar</td>
-        </thead>
-      <%= @location.idFilm.each do |film| %>
-        <tbody>
-        <tr>
-          <td><%= film.title %></td>
-          <td><%= film.category %></td>
-          <td><%= 
-                if film.available == true
-                    "Disponível"
-                else "Indisponível"
-                end
-              %>
-          </td>
-          <td><a href="/films/<%= film.id %>">Add</a></td>
-        </tr>
-        </tbody>
-      <% end %>
-
-    </table>
-  </div>
-
   <div class="actions">
     <%= form.submit :Salvar %>
   </div>

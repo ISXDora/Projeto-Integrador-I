@@ -15,6 +15,7 @@
     <%= form.label :film_id %>
     <%=form.collection_select(:film_id, Film.all, :id, :title, prompt: true) %>
   </div>
+  
 
   <div class="actions">
     <%= form.submit %>

@@ -1,0 +1,29 @@
+<div class"container-form-films">
+<%= form_with(model: basket) do |form| %>
+  <% if basket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(basket.errors.count, "error") %> prohibited this basket from being saved:</h2>
+
+      <ul>
+        <% basket.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Número_da_Fita %>
+    <%= form.collection_select(:ribbon_id, Ribbon.all, :id, :id, prompt: true) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ID_da_locação %>
+    <%= form.collection_select(:location_id, Location.all, :id, :id, prompt: true) %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

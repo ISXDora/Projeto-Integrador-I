@@ -1,0 +1,19 @@
+<div class="table-films-details">
+
+<table width="100%">
+    <th><h2> Lista Filmes </h2>
+        <tr>
+            <td>ID Fita</td>
+            <td>Filme</td>
+        </tr>
+    </th>
+    <tbody>
+        <% @ribbons.each do |ribbon| %>
+        <tr>
+            <td><%= ribbon.id %></td>
+            <td><%=ribbon.film.title %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+</div>

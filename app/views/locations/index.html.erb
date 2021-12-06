@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Locações</h1>
+<h1>Locação</h1>
 
 <table>
   <thead>
     <tr>
       <th>Data de Devolução</th>
       <th>Cliente</th>
-      <th>Filme</th>
+      <th>ID Locação</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +16,8 @@
     <% @locations.each do |location| %>
       <tr>
         <td><%= location.devolved_date %></td>
-        <td><%= location.client_id %></td>
-        <td><%= location.film_id %></td>
+        <td><%= location.client.name%></td>
+        <td><%= location.id %></td>
         <td><%= link_to 'Ver', location %></td>
         <td><%= link_to 'Editar', edit_location_path(location) %></td>
         <td><%= link_to 'Deletar', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>

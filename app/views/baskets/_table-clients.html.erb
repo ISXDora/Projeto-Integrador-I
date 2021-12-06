@@ -1,0 +1,20 @@
+<div class="table-clients-details">
+<table width="100%">
+    <th><h2> Lista Locações </h2>
+        <tr>
+            <td>Cliente</td>
+            <td>ID Locação</td>
+            <td>Data Devolução</td>
+        </tr>
+    </th>
+    <tbody>
+        <% @locations.each do |location| %>
+        <tr>
+            <td><%= location.client.name %></td>
+            <td><%= location.id %></td>
+            <td><%= location.devolved_date %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+</div>

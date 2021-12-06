@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Film:</strong>
-  <%= @ribbon.film_id %>
+  <strong>Fita Nº:</strong>
+  <%= @ribbon.film_id %> 
+  <strong>Filme:</strong>
+  <%= @ribbon.film.title %>
 </p>
+<br>
+<%= link_to 'Voltar para Filme',film_path(@ribbon.film_id) %>
+<br>
 
 <%= link_to 'Edit', edit_ribbon_path(@ribbon) %> |
 <%= link_to 'Back', ribbons_path %>

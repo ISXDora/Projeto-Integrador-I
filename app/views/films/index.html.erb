@@ -7,7 +7,6 @@
     <tr>
       <th>Título</th>
       <th>Categoria</th>
-      <th>Situação</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,14 +15,7 @@
     <% @films.each do |film| %>
       <tr>
         <td><%= film.title %></td>
-        <td><%= film.category %></td>
-        <td>
-              <%= if film.available == true
-                    "Disponível"
-                  else "Indisponível"
-                  end
-              %>
-        </td>
+        <td><%= film.category.name %></td>
         <td><%= link_to 'Ver', film %></td>
         <td><%= link_to 'Editar', edit_film_path(film) %></td>
         <td><%= link_to 'Deletar', film, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,0 +1,11 @@
+<h1>Adicione Filme(s)</h1>
+
+
+<div class="details-for-baskets">
+<%= render 'form', basket: @basket %>
+<div class="content-details">
+<%= render 'table-films', film: @film %>
+<%= render 'table-clients', client: @client %>
+</div>
+</div>
+<%= link_to 'Back', baskets_path %>
