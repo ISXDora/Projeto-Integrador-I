@@ -5,8 +5,7 @@ class BasketsController < ApplicationController
   def index
     @baskets = Basket.all
   end
-
-  # GET /baskets/1 or /baskets/1.json
+    # GET /baskets/1 or /baskets/1.json
   def show
   end
 

@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   root 'locations#index'
-
  resources :categories 
-  resources :baskets
-  resources :locations
-   resources :clients
+ resources :baskets
+
+ resources :locations
+  resources :clients
   resources :casts
   resources :actors
   resources :ribbons

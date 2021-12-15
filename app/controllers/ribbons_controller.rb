@@ -13,7 +13,6 @@ class RibbonsController < ApplicationController
   # GET /ribbons/new
   def new
     @ribbon = Ribbon.new
-
   end
 
   # GET /ribbons/1/edit

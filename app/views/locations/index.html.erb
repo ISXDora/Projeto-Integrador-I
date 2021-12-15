@@ -20,7 +20,7 @@
         <td><%= location.id %></td>
         <td><%= link_to 'Ver', location %></td>
         <td><%= link_to 'Editar', edit_location_path(location) %></td>
-        <td><%= link_to 'Deletar', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Baixa', location, method: :delete, data: { confirm: 'Confirma entrega de todas as fitas?' } %></td>
       </tr>
     <% end %>
   </tbody>

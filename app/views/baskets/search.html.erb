@@ -1,0 +1,6 @@
+<h1>Resultados da busca</h1>
+<ul>
+  <% @baskets.each do |basket| %>
+    <li><%= basket.ribbon.id %>, <%= basket.location.id %></li>
+  <% end %>
+</ul>
